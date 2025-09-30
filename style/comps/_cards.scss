@@ -1,0 +1,73 @@
+@use '../base' as v;
+
+.card {
+    @include v.card-glass;
+    transition: .2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: var(--spacing);
+
+    img {
+        transition: .3s ease-in-out;
+        height: 300px;
+        align-self: center;
+        margin: 30px 0;
+    }
+
+    button {
+        width: fit-content;
+    }
+
+    &:hover {
+        z-index: 2;
+
+        margin: 0 50px;
+        transform: scale(1.1);
+
+        & img {
+            transition: .3s ease-in-out;
+            transform: rotate(-20deg) scale(1.1);
+        }
+    }
+}
+
+section {
+    margin: 150px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        text-align: center;
+    }
+
+    div {
+        gap: var(--spacing);
+        margin-top: 100px;
+        display: flex;
+    }
+}
+
+#myPopover {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    @include v.card-glass;
+
+    & li::marker {
+        content: "❋"
+    }
+
+    &>* {
+        margin: var(--spacing);
+    }
+
+    &::backdrop {
+
+        background: rgba(255, 255, 255, 0.466);
+        backdrop-filter: blur(1px);
+    }
+}

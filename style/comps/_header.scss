@@ -1,0 +1,27 @@
+@use '../base' as v;
+
+nav {
+    padding: var(--spacing);
+    background: rgba(0, 0, 255, 0.144);
+    display: grid;
+    grid-template-columns: 2rem auto;
+
+    .logo {
+        width: 2rem;
+        aspect-ratio: 1/1;
+    }
+
+    .nav-links {
+        width: 100%;
+        align-self: center;
+        justify-self: center;
+        justify-content: space-evenly;
+        gap: 3rem;
+        display: flex;
+    }
+}
+
+// .landing {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+// }

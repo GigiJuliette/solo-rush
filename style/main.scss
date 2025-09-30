@@ -1,0 +1,12 @@
+@use 'comps/index';
+@use 'base' as v;
+
+body {
+    background: radial-gradient(circle, rgba(238, 174, 202, .5) 50%, rgba(148, 187, 233, .5) 100%);
+    font-family: "Gayathri", sans-serif;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 64px;
+}

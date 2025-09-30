@@ -1,0 +1,129 @@
+@charset "UTF-8";
+:root {
+  --spacing: 1rem;
+  --big-spacing: 300px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+nav {
+  padding: var(--spacing);
+  background: rgba(0, 0, 255, 0.144);
+  display: grid;
+  grid-template-columns: 2rem auto;
+}
+nav .logo {
+  width: 2rem;
+  aspect-ratio: 1/1;
+}
+nav .nav-links {
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  justify-content: space-evenly;
+  gap: 3rem;
+  display: flex;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: var(--spacing);
+  margin: var(--spacing);
+  transition: 0.2s ease-in-out;
+}
+.card:hover {
+  transition: 0.2s ease-in-out;
+  box-shadow: 0 4px 40px rgba(175, 21, 111, 0.445);
+}
+.card {
+  transition: 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  gap: var(--spacing);
+}
+.card img {
+  transition: 0.3s ease-in-out;
+  height: 300px;
+  align-self: center;
+  margin: 30px 0;
+}
+.card button {
+  width: fit-content;
+}
+.card:hover {
+  z-index: 2;
+  margin: 0 50px;
+  transform: scale(1.1);
+}
+.card:hover img {
+  transition: 0.3s ease-in-out;
+  transform: rotate(-20deg) scale(1.1);
+}
+
+section {
+  margin: 150px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section h2 {
+  text-align: center;
+}
+section div {
+  gap: var(--spacing);
+  margin-top: 100px;
+  display: flex;
+}
+
+#myPopover {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: var(--spacing);
+  margin: var(--spacing);
+  transition: 0.2s ease-in-out;
+}
+#myPopover:hover {
+  transition: 0.2s ease-in-out;
+  box-shadow: 0 4px 40px rgba(175, 21, 111, 0.445);
+}
+#myPopover li::marker {
+  content: "❋";
+}
+#myPopover > * {
+  margin: var(--spacing);
+}
+#myPopover::backdrop {
+  background: rgba(255, 255, 255, 0.466);
+  backdrop-filter: blur(1px);
+}
+
+body {
+  background: radial-gradient(circle, rgba(238, 174, 202, 0.5) 50%, rgba(148, 187, 233, 0.5) 100%);
+  font-family: "Gayathri", sans-serif;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 64px;
+}
+
+/*# sourceMappingURL=style.css.map */
