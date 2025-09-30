@@ -2,12 +2,31 @@
 :root {
   --spacing: 1rem;
   --big-spacing: 300px;
+  --light: rgba(247, 231, 207, 1);
+  --dark: rgba(161, 177, 141);
+  --highlight: rgb(191, 89, 119, 0.5);
 }
 
 * {
+  font-family: "Poiret One", sans-serif;
   margin: 0;
   padding: 0;
   text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+span {
+  font-family: "Poiret One", sans-serif;
+}
+
+p,
+a,
+button {
+  font-family: "Gayathri";
 }
 
 nav {
@@ -42,7 +61,7 @@ nav .nav-links {
 }
 .card:hover {
   transition: 0.2s ease-in-out;
-  box-shadow: 0 4px 40px rgba(175, 21, 111, 0.445);
+  box-shadow: 0 4px 70px var(--highlight);
 }
 .card {
   transition: 0.2s ease-in-out;
@@ -59,6 +78,23 @@ nav .nav-links {
 }
 .card button {
   width: fit-content;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: var(--spacing);
+  margin: var(--spacing);
+  transition: 0.2s ease-in-out;
+}
+.card button:hover {
+  transition: 0.2s ease-in-out;
+  box-shadow: 0 4px 70px var(--highlight);
+}
+.card button {
+  align-self: center;
 }
 .card:hover {
   z-index: 2;
@@ -103,7 +139,7 @@ section div {
 }
 #myPopover:hover {
   transition: 0.2s ease-in-out;
-  box-shadow: 0 4px 40px rgba(175, 21, 111, 0.445);
+  box-shadow: 0 4px 70px var(--highlight);
 }
 #myPopover li::marker {
   content: "❋";
@@ -117,8 +153,7 @@ section div {
 }
 
 body {
-  background: radial-gradient(circle, rgba(238, 174, 202, 0.5) 50%, rgba(148, 187, 233, 0.5) 100%);
-  font-family: "Gayathri", sans-serif;
+  background: radial-gradient(circle, var(--light) 50%, var(--dark) 100%);
 }
 
 h2 {

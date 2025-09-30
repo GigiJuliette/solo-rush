@@ -1,7 +1,14 @@
 :root {
     --spacing: 1rem;
     --big-spacing: 300px;
+    --light: rgba(247, 231, 207, 1);
+    --dark: rgba(161, 177, 141);
+    --highlight: rgb(191, 89, 119, 0.5);
+    // --dark: rgba(237, 130, 1, 0.4);
+    // --highlight: rgba(248, 189, 92, 0.5);
 }
+
+;
 
 @mixin card-glass {
     background: rgba(255, 255, 255, 0.2);
@@ -16,12 +23,28 @@
 
     &:hover {
         transition: .2s ease-in-out;
-        box-shadow: 0 4px 40px rgba(175, 21, 111, 0.445);
+        box-shadow: 0 4px 70px var(--highlight);
     }
 }
 
 * {
+    font-family: "Poiret One", sans-serif;
     margin: 0;
     padding: 0;
     text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+span {
+    font-family: "Poiret One", sans-serif;
+}
+
+p,
+a,
+button {
+    font-family: "Gayathri";
 }

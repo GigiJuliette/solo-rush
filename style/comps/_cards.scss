@@ -17,11 +17,13 @@
 
     button {
         width: fit-content;
+        font-size: 1.2rem;
+        @include v.card-glass;
+        align-self: center;
     }
 
     &:hover {
         z-index: 2;
-
         margin: 0 50px;
         transform: scale(1.1);
 
