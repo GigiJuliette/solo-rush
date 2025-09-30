@@ -3,9 +3,13 @@
 
 body {
     background: radial-gradient(circle, var(--light) 50%, var(--dark) 100%);
+    overflow-x: hidden;
 }
 
 h2 {
     font-weight: 400;
     font-size: 64px;
+    font-weight: bold;
+    color: rgb(191, 89, 120);
+    text-shadow: 5px 5px 0px var(--light);
 }

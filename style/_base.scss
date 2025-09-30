@@ -5,6 +5,7 @@
     --dark: rgba(161, 177, 141);
     --highlight: rgba(191, 89, 119, 0.5);
     --cubic-bezier: cubic-bezier(0, 1.1, .39, 1.5);
+    scroll-behavior: smooth;
 }
 
 ;
@@ -38,12 +39,13 @@ h2,
 h3,
 h4,
 h5,
-span {
+span,
+a {
     font-family: "Poiret One", sans-serif;
 }
 
 p,
-a,
+
 button {
     font-family: "Gayathri";
 }

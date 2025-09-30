@@ -1,1 +1,12 @@
 @use '../base' as v;
+
+footer {
+    border-top: 1px solid var(--light);
+    padding: var(--spacing);
+    font-size: 1.5rem;
+    display: flex;
+    color: var(--light);
+    gap: var(--spacing);
+    flex-direction: column;
+    align-items: center;
+}
