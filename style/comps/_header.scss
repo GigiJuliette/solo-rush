@@ -2,26 +2,194 @@
 
 nav {
     padding: var(--spacing);
-    background: rgba(0, 0, 255, 0.144);
     display: grid;
-    grid-template-columns: 2rem auto;
+    grid-template-columns: 4rem auto;
+
+    @media (max-width:992px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing);
+    }
 
     .logo {
-        width: 2rem;
+        width: 4rem;
         aspect-ratio: 1/1;
+
+
+        img {
+            width: 100%;
+        }
     }
 
     .nav-links {
+        font-size: 2rem;
         width: 100%;
         align-self: center;
         justify-self: center;
         justify-content: space-evenly;
         gap: 3rem;
         display: flex;
+        color: var(--light);
+        font-weight: bold;
+        text-shadow: 2px 2px 0px var(--dark);
+    }
+
+    margin-bottom: calc(var(--spacing)*2);
+    border-bottom: solid 1px var(--light);
+}
+
+.landing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media (max-width:992px) {
+        grid-template-columns: 1fr;
+    }
+
+    &__intro {
+        font-size: 64px;
+        color: var(--light);
+        text-shadow: 4px 7px 0px var(--dark);
+
+
+
+        h1 {
+            width: 50%;
+            align-self: center;
+            justify-self: right;
+            transform-origin: right;
+            text-align: right;
+            animation: .9s title both;
+            animation-timing-function: var(--cubic-bezier);
+
+            @media (max-width:992px) {
+                width: unset;
+                align-self: center;
+                text-align: center;
+            }
+        }
+    }
+
+    &__animation {
+        height: 700px;
+        position: relative;
+
+        &>* {
+            position: absolute;
+            max-width: 300px;
+            animation: .8s both;
+            animation-name: var(--animation-name);
+            animation-timing-function: var(--cubic-bezier);
+        }
+
+
+        @media (max-width:992px) {
+            display: none;
+        }
     }
 }
 
-// .landing {
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;
-// }
+
+@keyframes saladbun {
+    from {
+        left: 10%;
+        bottom: 40%;
+    }
+
+    to {
+        left: 10%;
+        bottom: -7%;
+    }
+}
+
+@keyframes steak {
+    from {
+        transform: scale(0);
+        bottom: 50%;
+        left: 10%;
+    }
+
+    30% {
+        transform: scale(0);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+
+    to {
+        left: 10%;
+        bottom: 20%;
+    }
+}
+
+@keyframes tomates {
+    from {
+        transform: scale(0);
+        bottom: 50%;
+        left: 10%;
+    }
+
+    40% {
+        transform: scale(0);
+    }
+
+    70% {
+        transform: scale(1);
+        z-index: 2
+    }
+
+    to {
+        left: 10%;
+        bottom: 40%;
+    }
+}
+
+@keyframes bacon {
+    from {
+        transform: scale(0);
+
+        bottom: 50%;
+        left: 10%;
+    }
+
+    60% {
+        transform: scale(0);
+    }
+
+    90% {
+        transform: scale(1);
+    }
+
+    to {
+        left: 10%;
+        bottom: 58%;
+    }
+}
+
+@keyframes bun {
+    from {
+        left: 10%;
+        top: 40%;
+    }
+
+    to {
+        left: 10%;
+        top: 0;
+    }
+}
+
+@keyframes title {
+    from {
+        opacity: 0;
+        transform: translateX(300%);
+        // font-size: 16px;
+    }
+
+    to {
+        opacity: 1;
+        // font-size: 64px;
+        transform: translateX(0);
+    }
+}

@@ -1,11 +1,10 @@
 :root {
     --spacing: 1rem;
-    --big-spacing: 300px;
+    --big-spacing: 150px;
     --light: rgba(247, 231, 207, 1);
     --dark: rgba(161, 177, 141);
-    --highlight: rgb(191, 89, 119, 0.5);
-    // --dark: rgba(237, 130, 1, 0.4);
-    // --highlight: rgba(248, 189, 92, 0.5);
+    --highlight: rgba(191, 89, 119, 0.5);
+    --cubic-bezier: cubic-bezier(0, 1.1, .39, 1.5);
 }
 
 ;

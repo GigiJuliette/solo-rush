@@ -1,10 +1,10 @@
-@charset "UTF-8";
 :root {
   --spacing: 1rem;
-  --big-spacing: 300px;
+  --big-spacing: 150px;
   --light: rgba(247, 231, 207, 1);
   --dark: rgba(161, 177, 141);
-  --highlight: rgb(191, 89, 119, 0.5);
+  --highlight: rgba(191, 89, 119, 0.5);
+  --cubic-bezier: cubic-bezier(0, 1.1, .39, 1.5);
 }
 
 * {
@@ -31,23 +31,170 @@ button {
 
 nav {
   padding: var(--spacing);
-  background: rgba(0, 0, 255, 0.144);
   display: grid;
-  grid-template-columns: 2rem auto;
+  grid-template-columns: 4rem auto;
+}
+@media (max-width: 992px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing);
+  }
 }
 nav .logo {
-  width: 2rem;
+  width: 4rem;
   aspect-ratio: 1/1;
 }
+nav .logo img {
+  width: 100%;
+}
 nav .nav-links {
+  font-size: 2rem;
   width: 100%;
   align-self: center;
   justify-self: center;
   justify-content: space-evenly;
   gap: 3rem;
   display: flex;
+  color: var(--light);
+  font-weight: bold;
+  text-shadow: 2px 2px 0px var(--dark);
+}
+nav {
+  margin-bottom: calc(var(--spacing) * 2);
+  border-bottom: solid 1px var(--light);
 }
 
+.landing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 992px) {
+  .landing {
+    grid-template-columns: 1fr;
+  }
+}
+.landing__intro {
+  font-size: 64px;
+  color: var(--light);
+  text-shadow: 4px 7px 0px var(--dark);
+}
+.landing__intro h1 {
+  width: 50%;
+  align-self: center;
+  justify-self: right;
+  transform-origin: right;
+  text-align: right;
+  animation: 0.9s title both;
+  animation-timing-function: var(--cubic-bezier);
+}
+@media (max-width: 992px) {
+  .landing__intro h1 {
+    width: unset;
+    align-self: center;
+    text-align: center;
+  }
+}
+.landing__animation {
+  height: 700px;
+  position: relative;
+}
+.landing__animation > * {
+  position: absolute;
+  max-width: 300px;
+  animation: 0.8s both;
+  animation-name: var(--animation-name);
+  animation-timing-function: var(--cubic-bezier);
+}
+@media (max-width: 992px) {
+  .landing__animation {
+    display: none;
+  }
+}
+
+@keyframes saladbun {
+  from {
+    left: 10%;
+    bottom: 40%;
+  }
+  to {
+    left: 10%;
+    bottom: -7%;
+  }
+}
+@keyframes steak {
+  from {
+    transform: scale(0);
+    bottom: 50%;
+    left: 10%;
+  }
+  30% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1);
+  }
+  to {
+    left: 10%;
+    bottom: 20%;
+  }
+}
+@keyframes tomates {
+  from {
+    transform: scale(0);
+    bottom: 50%;
+    left: 10%;
+  }
+  40% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1);
+    z-index: 2;
+  }
+  to {
+    left: 10%;
+    bottom: 40%;
+  }
+}
+@keyframes bacon {
+  from {
+    transform: scale(0);
+    bottom: 50%;
+    left: 10%;
+  }
+  60% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1);
+  }
+  to {
+    left: 10%;
+    bottom: 58%;
+  }
+}
+@keyframes bun {
+  from {
+    left: 10%;
+    top: 40%;
+  }
+  to {
+    left: 10%;
+    top: 0;
+  }
+}
+@keyframes title {
+  from {
+    opacity: 0;
+    transform: translateX(300%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .card {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
@@ -101,13 +248,23 @@ nav .nav-links {
   margin: 0 50px;
   transform: scale(1.1);
 }
+@media (max-width: 592px) {
+  .card:hover {
+    margin: var(--spacing);
+  }
+}
 .card:hover img {
   transition: 0.3s ease-in-out;
   transform: rotate(-20deg) scale(1.1);
 }
 
+@keyframes card {
+  to {
+    transform: scale(1.1);
+  }
+}
 section {
-  margin: 150px 0;
+  margin: var(--big-spacing) 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -119,6 +276,16 @@ section div {
   gap: var(--spacing);
   margin-top: 100px;
   display: flex;
+}
+@media (max-width: 592px) {
+  section div {
+    flex-direction: column;
+  }
+}
+@media (max-width: 992px) {
+  section div:nth-child(3) {
+    display: none;
+  }
 }
 
 #myPopover {
@@ -140,9 +307,6 @@ section div {
 #myPopover:hover {
   transition: 0.2s ease-in-out;
   box-shadow: 0 4px 70px var(--highlight);
-}
-#myPopover li::marker {
-  content: "❋";
 }
 #myPopover > * {
   margin: var(--spacing);
